@@ -42,12 +42,15 @@ use Smalot\PdfParser\Element\ElementNumeric;
 use Smalot\PdfParser\Element\ElementString;
 use Smalot\PdfParser\Element\ElementStruct;
 use Smalot\PdfParser\Element\ElementXRef;
+use IteratorAggregate;
 
 /**
  * Class Element
  */
-class Element
+abstract class Element implements IteratorAggregate
 {
+    use TraversableTrait;
+
     /**
      * @var Document|null
      */

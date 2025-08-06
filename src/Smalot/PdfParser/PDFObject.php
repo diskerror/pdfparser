@@ -35,12 +35,16 @@ namespace Smalot\PdfParser;
 use Smalot\PdfParser\Exception\InvalidDictionaryObjectException;
 use Smalot\PdfParser\XObject\Form;
 use Smalot\PdfParser\XObject\Image;
+use IteratorAggregate;
+use Traversable;
 
 /**
  * Class PDFObject
  */
-class PDFObject
+class PDFObject implements IteratorAggregate
 {
+    use TraversableTrait;
+
     public const TYPE = 't';
 
     public const OPERATOR = 'o';

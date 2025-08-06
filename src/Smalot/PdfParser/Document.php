@@ -34,6 +34,7 @@ namespace Smalot\PdfParser;
 
 use Smalot\PdfParser\Encoding\PDFDocEncoding;
 use Smalot\PdfParser\Exception\MissingCatalogException;
+use IteratorAggregate;
 
 /**
  * Technical references :
@@ -47,8 +48,10 @@ use Smalot\PdfParser\Exception\MissingCatalogException;
  *
  * Class Document
  */
-class Document
+class Document implements IteratorAggregate
 {
+    use TraversableTrait;
+
     /**
      * @var PDFObject[]
      */
